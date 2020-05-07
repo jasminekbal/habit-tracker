@@ -1,0 +1,52 @@
+<%- include("partials/header.ejs") %>
+
+<div class="back-blue-cover">
+	<div class= "back-white-thin">
+		
+		<div class ="back-blue-thin">
+			<div class ="back-white">
+				<div style = "width: 80%; margin: 50px auto;">
+
+					<div class = "container">
+						<h1 style ="text-align: center;">
+								Today's log for <%=habit.title %>
+						</h1>
+						<div class = "row">
+
+							<div style = "width: 80%; margin: 20px auto;">
+								<form action="/<%=currentUser._id %>/<%= habit._id%>" method = "POST">
+
+
+									<legend>Completed Today?</legend>
+									<div class="radio-toolbar">
+										<input type="radio" name="complete" value="Yes" id="sizeWeight" checked="checked" />
+										<label for="sizeWeight">Yes</label>
+										<input type="radio" name="complete" value="No" id="sizeDimensions" />
+										<label for="sizeDimensions">No</label>
+									</div>
+
+									<div class = "form=group">
+										<input class="form-control" type = "text" placeholder = "Notes" name = "note"> 
+									</div>
+
+
+									<div class = "form=group">
+										<button class="btn btn-lg btn-block btn-primary">
+											Submit
+										</button>
+									</div>
+
+								</form>
+								<a href= "/<%=currentUser._id %>/habits" > Go Back </a>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%- include("partials/footer.ejs") %>

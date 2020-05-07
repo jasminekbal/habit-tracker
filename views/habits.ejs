@@ -1,0 +1,41 @@
+<%- include("partials/header_nav.ejs") %>
+
+
+
+<div class = "container">
+	<header class ="jumbotron JumboHeaderImg">
+		<div class = "container">
+			<h1 style ="color: white">
+			Welcome Back, <%= currentUser.username %>
+		</h1>
+		<p style="color: white;">
+			"<%=quote %>"
+		</p>
+		<p>
+			<a class = "btn btn-primary btn-md" class="btn--center" href= "/<%= currentUser._id%>/new" >Create a New Habit </a>
+		</p>
+		</div>
+		
+	</header>
+	
+	
+	<div class = "row text-center">
+		<% habits.forEach(function(habit){ %>
+			
+			<div class= "col-md-4 col-sm-6">
+			
+				<div class="card" style="width: 18rem;">
+				  <img src="<%= habit.image %>" class="card-img-top" style="height: 10rem;">
+				  <div class="card-body">
+					<h5 class="card-title"> <%=habit.name %> </h5>
+					<a href="/<%= currentUser._id%>/<%= habit._id %>/complete" class="btn btn-sm btn-primary">Complete</a>
+					<a href="/<%= currentUser._id%>/<%= habit._id %>" class="btn btn-sm btn-primary">More Info</a>
+				  </div> 
+				</div>
+
+			</div>
+		<% }); %>
+	</div>
+	
+</div>
+<%- include("partials/footer.ejs") %>

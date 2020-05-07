@@ -1,0 +1,66 @@
+<%- include("partials/header_nav.ejs") %>
+
+<div class="container">
+	<div class="row" id="first-row">
+		<div class= "col-md-3">
+			<div class="back-blue-thin2">
+				<div class="back-white2">
+					<h2>
+						<%= habit.title%>
+					</h2>
+					<hr>
+					<p style= "margin: 0">
+						<bold> MY MOTIVATION:</bold>
+					</p>
+					<p style= "margin: 0;">
+						<%=habit.motivation %>
+					</p>
+				</div>
+				
+			</div>
+		</div>
+		 
+		<div class="col-md-9">
+			<img class= "img-show" src="<%=habit.image %>" alt="Loading..." width="500" height="330">
+		</div>
+		
+	</div>
+	<!-- create log table below -->
+	<div class="row">
+		<div class="col-md-3">
+			
+			<a href="/<%= currentUser._id%>/<%= habit._id %>/new" style ="margin-top: 75px" class="btn btn-lg btn-primary btn--center">New Entry</a>
+			<a href="/<%= currentUser._id%>/habits" >Go Back</a>
+		</div>
+		<div class="col-md-9" style= "text-align:center">
+			<h3 style= "text-align:center">
+				Your Daily Log
+			</h3>
+			<table>
+			  <tr>
+				<th width ="140px">Date</th>
+				<th width ="120px">Habit Completed?</th>
+				<th>Notes</th>
+			  </tr>
+				<% habit.logs.forEach(function(log){ %>
+					<% if (log.completed == "Yes"){ %>
+						<tr class="row-complete">
+							<td class="left-thick"><%= log.date %> </td>
+    						<td><%= log.completed %></td>
+   							<td class="right-thick"><%= log.note %></td>
+						</tr>
+					<% } else { %>
+						<tr class="row-incomplete">
+							<td class="left-thick"><%= log.date %> </td>
+    						<td><%= log.completed %></td>
+   							<td class="right-thick"><%= log.note %></td>
+						</tr>
+					<% } %>
+				<% }); %>
+				
+			</table>
+		</div>
+	</div>
+</div>
+
+<%- include("partials/footer.ejs") %>

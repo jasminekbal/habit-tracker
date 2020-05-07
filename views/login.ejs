@@ -1,0 +1,30 @@
+<%- include("partials/header.ejs") %>
+
+<div class="back-blue-cover">
+	<div class= "back-white-thin">
+		
+		<div class ="back-blue-thin">
+			<div class ="back-white">
+				<div style = "width: 80%; margin: 50px auto;">
+					<h1>Login!</h1>
+					<form action="/login" method="POST">
+						<input class="form-control" type="text" name="username" placeholder="username">
+						<input class="form-control" type="password" name="password" placeholder="password">
+						<input class="btn btn-lg btn-block btn-primary" type="submit" value="Login!">
+					</form>
+					<p style="text-align:center">
+					First time here?
+					</p >
+					<a style="text-align:center" href="/register">Sign Up</a>
+				</div>
+				
+			</div>
+				
+			
+		</div>
+	</div>
+		
+</div>
+
+
+<%- include("partials/footer.ejs") %>
