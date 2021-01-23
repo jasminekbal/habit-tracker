@@ -2,7 +2,7 @@
 
 ### About
 
-This project was inspired by a habit tracking techique that I found [online](https://www.youtube.com/watch?v=0bxIg3M_MHY). I couldn't find something exactly like this online and was looking to grow my skills in web development so I thought I'd made one!
+This project was inspired by a habit tracking techique that I found through [this](https://www.youtube.com/watch?v=0bxIg3M_MHY) video. I couldn't find something exactly like this online and was looking to grow my skills in web development so I thought I'd made one!
 
 
 ### Implementation Details
